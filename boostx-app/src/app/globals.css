@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #2A1B38; /* Deep purple text */
+  
+  --primary: #3B0764; /* Vibrant Deep Magenta-Purple */
+  --primary-foreground: #ffffff;
+  
+  --toggle-active: #D946EF; /* Glowing Fuchsia */
+  
+  --accent: #6EE7B7; /* Mint green (Cards, outlines, icons) */
+  --accent-foreground: #1A0B2E;
+  
+  --card: #ffffff;
+  --card-foreground: #2A1B38;
+  
+  --border: #E5E7EB;
+  --muted: #F3F4F6;
+  --muted-foreground: #6B7280;
+  
+  --nav-bg: #3B0764; /* Vibrant Deep Magenta-Purple */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --font-sans: var(--font-cairo), sans-serif;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+  
+  overscroll-behavior-y: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+input, textarea {
+  -webkit-user-select: auto;
+  user-select: auto;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+button, input, select {
+  min-height: 48px; 
+}
+
+@layer utilities {
+  .premium-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+  }
+
+  .purple-glass {
+    background: rgba(59, 7, 100, 0.85); /* Vibrant Deep Purple with opacity */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 25px rgba(217, 70, 239, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.2); /* Fuchsia glow */
+    border: 1px solid rgba(217, 70, 239, 0.3); /* Fuchsia tinted border */
+  }
+
+  .nav-glass-white {
+    background: rgba(59, 7, 100, 0.90); /* Vibrant Deep Purple */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid rgba(217, 70, 239, 0.3);
+    box-shadow: 0 -8px 30px rgba(217, 70, 239, 0.3);
+  }
+}
+
+/* Subtle pulse for the FAB button */
+@keyframes fabPulse {
+  0% { box-shadow: 0 0 0 0 rgba(26, 11, 46, 0.4); }
+  70% { box-shadow: 0 0 0 15px rgba(26, 11, 46, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(26, 11, 46, 0); }
+}
+
+.fab-button {
+  border: 4px solid var(--background);
+  animation: fabPulse 2s infinite;
+}
+
+/* ⚡ Electrical/Lightning Tap Effect ⚡ */
+.electric-tap {
+  transition: box-shadow 0.2s ease, transform 0.1s ease;
+}
+
+.electric-tap:active {
+  box-shadow: 0 0 15px rgba(57, 255, 20, 0.8), inset 0 0 10px rgba(57, 255, 20, 0.5) !important;
+  transform: scale(0.95);
+}
+
+/* ⚡ Lightning Pill Effect for Toggle ⚡ */
+@keyframes lightningFlashPill {
+  0%, 100% { background-position: -200% center; }
+  50% { background-position: 200% center; }
+}
+
+.pill-lightning {
+  background-color: var(--primary); /* Deep Purple */
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 10px rgba(57, 255, 20, 0.2);
+}
+
+.pill-lightning::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(57, 255, 20, 0.1) 40%,
+    rgba(57, 255, 20, 0.8) 50%,
+    rgba(57, 255, 20, 0.1) 60%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: lightningFlashPill 3s infinite linear;
+  pointer-events: none;
+}

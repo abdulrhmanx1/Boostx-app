@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">boostx</string>
+    <string name="title_activity_main">boostx</string>
+    <string name="package_name">com.boostx.app</string>
+    <string name="custom_url_scheme">com.boostx.app</string>
+</resources>
