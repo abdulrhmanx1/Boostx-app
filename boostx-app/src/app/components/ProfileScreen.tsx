@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { User, Mail, ShieldCheck, ChevronLeft, LogOut, Camera, Star, Award, BadgeCheck, X, FileText, CheckCircle, Loader2 } from "lucide-react";
+import { User, Mail, ShieldCheck, ChevronLeft, LogOut, Camera, Star, Award, BadgeCheck, X, FileText, CheckCircle, RefreshCw } from "lucide-react";
 import { useAuthStore } from "../../store/useAuthStore";
 import { useState } from "react";
 
@@ -123,7 +123,7 @@ export default function ProfileScreen({ onClose }: { onClose: () => void }) {
                     disabled={isSubmitting}
                     className="w-full py-4 bg-accent text-white rounded-2xl font-black shadow-xl shadow-accent/20 flex items-center justify-center gap-2"
                   >
-                    {isSubmitting ? <Loader2 className="w-5 h-5 animate-spin" /> : "تقديم الطلب للمراجعة"}
+                    {isSubmitting ? <RefreshCw className="w-5 h-5 animate-spin" /> : "تقديم الطلب للمراجعة"}
                   </button>
                 </>
               ) : (

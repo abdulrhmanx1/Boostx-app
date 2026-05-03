@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Star, Heart, Share2, CheckCircle2, MessageCircle, ShoppingCart, Banknote, X, ShieldCheck, Clock, ShoppingBag, CheckCircle, Loader2 } from "lucide-react";
+import { ArrowRight, Star, Heart, Share2, CheckCircle2, MessageCircle, ShoppingCart, Banknote, X, ShieldCheck, Clock, ShoppingBag, CheckCircle, RefreshCw } from "lucide-react";
 import { useState } from "react";
 import { createClient } from "../../utils/supabase/client";
 import { useAuthStore } from "../../store/useAuthStore";
@@ -162,7 +162,7 @@ export default function ServiceDetailScreen({ onClose, onOpenChat }: { onClose: 
           disabled={isOrdering}
           className="flex-[2] py-4 rounded-2xl bg-primary text-white font-black text-sm shadow-lg shadow-primary/30 flex justify-center items-center gap-2 hover:scale-[0.98] active:scale-95 transition-all"
         >
-          {isOrdering ? <Loader2 className="w-5 h-5 animate-spin" /> : <><ShoppingBag className="w-5 h-5" /> اطلب الخدمة الآن</>}
+          {isOrdering ? <RefreshCw className="w-5 h-5 animate-spin" /> : <><ShoppingBag className="w-5 h-5" /> اطلب الخدمة الآن</>}
         </button>
       </div>
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, BarChart3, Users, LayoutDashboard, Settings, Plus, Image as ImageIcon, Video, ShieldAlert, DollarSign, Edit3, Trash2, Phone, Share2, Layers, Loader2, Check, MessageCircle, HelpCircle } from "lucide-react";
+import { ArrowRight, BarChart3, Users, LayoutDashboard, Settings, Plus, Image as ImageIcon, Video, ShieldAlert, DollarSign, Edit3, Trash2, Phone, Share2, Layers, RefreshCw, Check, MessageCircle, HelpCircle } from "lucide-react";
 import { useState } from "react";
 import { createClient } from "../../utils/supabase/client";
 
@@ -150,7 +150,7 @@ export default function AdminDashboardScreen({ onClose }: { onClose: () => void 
                 className="w-full bg-zinc-950 border border-zinc-800 rounded-xl p-3 text-sm outline-none" 
               />
               <button onClick={handleAddCategory} className="w-full py-3 bg-white text-black rounded-xl font-black text-xs">
-                {isAdding ? <Loader2 className="w-4 h-4 animate-spin" /> : "إضافة القسم"}
+                {isAdding ? <RefreshCw className="w-4 h-4 animate-spin" /> : "إضافة القسم"}
               </button>
             </div>
           </motion.div>

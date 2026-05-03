@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { Search, MapPin, Clock, DollarSign, Send, X, ShieldCheck, User, Briefcase, ChevronLeft, Loader2, Sparkles } from "lucide-react";
+import { Search, MapPin, Clock, DollarSign, Send, X, ShieldCheck, User, Briefcase, ChevronLeft, RefreshCw, Sparkles } from "lucide-react";
 import { useState, useEffect } from "react";
 import { createClient } from "../../utils/supabase/client";
 import { useAuthStore } from "../../store/useAuthStore";
@@ -82,7 +82,7 @@ export default function LeadsExplorerScreen({ onClose }: { onClose: () => void }
       <div className="flex-1 overflow-y-auto p-4 flex flex-col gap-4 no-scrollbar pb-32">
         {loading ? (
           <div className="flex flex-col items-center justify-center py-20 opacity-40">
-            <Loader2 className="w-10 h-10 animate-spin mb-2" />
+            <RefreshCw className="w-10 h-10 animate-spin mb-2" />
             <p className="font-black text-xs uppercase tracking-widest">جاري جلب المشاريع...</p>
           </div>
         ) : leads.map((lead) => (
@@ -162,7 +162,7 @@ export default function LeadsExplorerScreen({ onClose }: { onClose: () => void }
                   disabled={isSubmitting}
                   className="w-full py-4 bg-primary text-white rounded-2xl font-black shadow-xl shadow-primary/30 flex items-center justify-center gap-2"
                 >
-                  {isSubmitting ? <Loader2 className="w-5 h-5 animate-spin" /> : "إرسال العرض للعميل"}
+                  {isSubmitting ? <RefreshCw className="w-5 h-5 animate-spin" /> : "إرسال العرض للعميل"}
                 </button>
               </div>
             </motion.div>

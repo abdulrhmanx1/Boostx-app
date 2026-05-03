@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Coins, MapPin, Calendar, Lock, Unlock, Phone, MessageSquare, Loader2 } from "lucide-react";
+import { Coins, MapPin, Calendar, Lock, Unlock, Phone, MessageSquare, RefreshCw } from "lucide-react";
 import { useState, useEffect } from "react";
 import { createClient } from "../../utils/supabase/client";
 import { useAuthStore } from "../../store/useAuthStore";
@@ -41,7 +41,7 @@ export default function ExploreLeadsScreen() {
     }, 1500);
   };
 
-  if (loading) return <div className="p-12 text-center"><Loader2 className="w-10 h-10 animate-spin mx-auto text-primary" /></div>;
+  if (loading) return <div className="p-12 text-center"><RefreshCw className="w-10 h-10 animate-spin mx-auto text-primary" /></div>;
 
   return (
     <div className="flex flex-col gap-6" dir="rtl">
@@ -103,7 +103,7 @@ export default function ExploreLeadsScreen() {
                     className="flex-1 py-3 bg-black text-white rounded-xl text-xs font-black flex items-center justify-center gap-2 shadow-lg hover:scale-[0.98] active:scale-95 transition-all disabled:opacity-50"
                   >
                     {isUnlocking === lead.id ? (
-                      <Loader2 className="w-4 h-4 animate-spin" />
+                      <RefreshCw className="w-4 h-4 animate-spin" />
                     ) : (
                       <>
                         <Lock className="w-4 h-4" /> 

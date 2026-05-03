@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { X, Send, ClipboardList, MapPin, Coins, CheckCircle2, Loader2 } from "lucide-react";
+import { X, Send, ClipboardList, MapPin, Coins, CheckCircle2, RefreshCw } from "lucide-react";
 import { useState, useEffect } from "react";
 import { createClient } from "../../utils/supabase/client";
 import { useAuthStore } from "../../store/useAuthStore";
@@ -160,7 +160,7 @@ export default function PostLeadScreen({ onClose }: { onClose: () => void }) {
                 disabled={isPosting}
                 className="flex-[2] py-4 rounded-2xl bg-primary text-white font-black shadow-lg shadow-primary/30 flex justify-center items-center gap-2"
               >
-                {isPosting ? <Loader2 className="w-6 h-6 animate-spin" /> : <><Send className="w-5 h-5" /> نشر الطلب الآن</>}
+                {isPosting ? <RefreshCw className="w-6 h-6 animate-spin" /> : <><Send className="w-5 h-5" /> نشر الطلب الآن</>}
               </button>
             </div>
           </motion.div>

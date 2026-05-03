@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Package, Clock, CheckCircle2, AlertCircle, ChevronLeft, MessageCircle } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Package, Clock, CheckCircle2, AlertCircle, ChevronLeft, MessageCircle, RefreshCw } from "lucide-react";
 import { useState, useEffect } from "react";
 import { createClient } from "../../utils/supabase/client";
 import { useAuthStore } from "../../store/useAuthStore";
@@ -117,7 +117,7 @@ export default function MyOrdersScreen({ onClose }: { onClose: () => void }) {
                           disabled={isProcessing}
                           className="px-4 py-2 bg-green-500 text-white rounded-xl text-xs font-black shadow-lg shadow-green-500/20 flex items-center gap-2"
                         >
-                          {isProcessing ? <Loader2 className="w-4 h-4 animate-spin" /> : "تأكيد الاستلام وفك الضمان"}
+                          {isProcessing ? <RefreshCw className="w-4 h-4 animate-spin" /> : "تأكيد الاستلام وفك الضمان"}
                         </button>
                       )}
                     </div>

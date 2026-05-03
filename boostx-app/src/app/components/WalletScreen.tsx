@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { Wallet, ArrowUpRight, ArrowDownLeft, Plus, History, ChevronLeft, CreditCard, X, Loader2, CheckCircle2 } from "lucide-react";
+import { Wallet, ArrowUpRight, ArrowDownLeft, Plus, History, ChevronLeft, CreditCard, X, RefreshCw, CheckCircle2 } from "lucide-react";
 import { useState } from "react";
 
 export default function WalletScreen({ onClose }: { onClose: () => void }) {
@@ -142,7 +142,7 @@ export default function WalletScreen({ onClose }: { onClose: () => void }) {
                   disabled={isProcessing}
                   className="w-full py-4 bg-primary text-white rounded-2xl font-black shadow-xl shadow-primary/30 flex items-center justify-center gap-2 mt-2"
                 >
-                  {isProcessing ? <Loader2 className="w-5 h-5 animate-spin" /> : `دفع ${topUpAmount} ر.س الآن`}
+                  {isProcessing ? <RefreshCw className="w-5 h-5 animate-spin" /> : `دفع ${topUpAmount} ر.س الآن`}
                 </button>
               </div>
             </motion.div>
