@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { Briefcase, DollarSign, LayoutDashboard, Plus, Settings, MessageCircle, Star, ShoppingBag, Eye, TrendingUp, X, CheckCircle, RefreshCw, Link as LinkIcon, FileText, ShieldAlert, CreditCard, Edit3 } from "lucide-react";
+import { Briefcase, DollarSign, LayoutDashboard, Plus, Settings, MessageCircle, Star, ShoppingBag, Eye, TrendingUp, X, CheckCircle, RefreshCw, Link as LinkIcon, FileText, ShieldAlert, CreditCard, Edit3, Sparkles } from "lucide-react";
 import { useState, useEffect } from "react";
 import { createClient } from "../../utils/supabase/client";
 import { useAuthStore } from "../../store/useAuthStore";
